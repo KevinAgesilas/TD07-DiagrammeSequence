@@ -1,0 +1,12 @@
+@startuml
+create Amende
+":SmartPhone" -> Amende : new
+":SmartPhone" -> ":Commissariat" : (enregistrerAmende : Amende uneAmende)
+activate ":Commissariat"
+":Commissariat" -> ":StatCommissariat" : incrementeCptA(1)
+activate ":StatCommissariat"
+":StatCommissariat" --> ":Commissariat"
+deactivate ":StatCommissariat"
+deactivate ":Commissariat"
+":Commissariat" --> ":SmartPhone"
+@enduml

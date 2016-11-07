@@ -1,0 +1,13 @@
+@startuml
+
+Test -> Accueil : accueil(nom,prenom)
+create Dossier
+activate Accueil
+Accueil -> Dossier : new
+Accueil -> Medecin : declencheConsultation(Dossier unDossier)
+activate Medecin
+Medecin --> Accueil : returned value true
+deactivate Medecin
+Accueil --> Test : retourDossier()
+deactivate Accueil
+@enduml
